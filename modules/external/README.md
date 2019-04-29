@@ -10,7 +10,7 @@ You can open this example: [IAM Role for 3rd Party AWS Account](https://github.c
 
 Important Notes
 ---------------
-* `role_path` should begin and end with "/external/". Examples:
+* `role_path` should begin with "/external/" and end with "/". Examples:
   * `role_path = "/external/"` -> Valid
   * `role_path = "/external"` -> Invalid (ends without forward slash)
   * `role_path = "external/"` -> Invalid (begins without forward slash)
