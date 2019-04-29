@@ -13,6 +13,9 @@ module "this" {
   role_max_session_duration  = 43200
 
   aws_service = "config.amazonaws.com"
+
+  product_domain = "tst"
+  environment    = "production"
 }
 
 resource "aws_iam_role_policy_attachment" "this" {

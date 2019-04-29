@@ -20,6 +20,22 @@ variable "role_description" {
   type        = "string"
 }
 
+variable "product_domain" {
+  description = "Abbreviation of the product domain the created resources belong to"
+  type        = "string"
+}
+
+variable "environment" {
+  type        = "string"
+  description = "Will be used in Environment tag"
+}
+
+variable "role_tags" {
+  description = "Additional tags to be put on iam role"
+  type        = "map"
+  default     = {}
+}
+
 variable "role_assume_policy" {
   description = "IAM policy document that grants an entity permission to assume the role in JSON format."
   type        = "string"

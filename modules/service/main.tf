@@ -40,8 +40,12 @@ module "this" {
   role_name        = "${random_id.role_name.hex}"
   role_path        = "/service-role/${var.aws_service}/"
   role_description = "${var.role_description}"
+  role_tags        = "${var.role_tags}"
 
   role_assume_policy         = "${data.aws_iam_policy_document.this.json}"
   role_force_detach_policies = "${var.role_force_detach_policies}"
   role_max_session_duration  = "${var.role_max_session_duration}"
+
+  product_domain = "${var.product_domain}"
+  environment    = "${var.environment}"
 }

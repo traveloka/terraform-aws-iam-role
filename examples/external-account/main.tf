@@ -15,6 +15,9 @@ module "this" {
 
   account_id  = "112233445566"
   external_id = "ABCDEFGHIJ01"
+
+  product_domain = "tst"
+  environment    = "production"
 }
 
 resource "aws_iam_role_policy_attachment" "this" {

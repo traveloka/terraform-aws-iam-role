@@ -7,8 +7,10 @@ module "this" {
   # source = "github.com/traveloka/terraform-aws-iam-role.git//modules/instance?ref=v0.3.0"
   source = "../../modules/instance"
 
-  service_name = "txtdata"
-  cluster_role = "app"
+  service_name   = "txtdata"
+  cluster_role   = "app"
+  product_domain = "txt"
+  environment    = "production"
 }
 
 resource "aws_iam_role_policy_attachment" "this" {

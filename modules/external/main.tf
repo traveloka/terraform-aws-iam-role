@@ -38,8 +38,12 @@ module "this" {
   role_name        = "${var.role_name}"
   role_path        = "${var.role_path}"
   role_description = "${var.role_description}"
+  role_tags        = "${var.role_tags}"
 
   role_assume_policy         = "${data.aws_iam_policy_document.doc.json}"
   role_force_detach_policies = "${var.role_force_detach_policies}"
   role_max_session_duration  = "${var.role_max_session_duration}"
+
+  product_domain = "${var.product_domain}"
+  environment    = "${var.environment}"
 }

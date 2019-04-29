@@ -1,6 +1,12 @@
-variable "role_identifier" {
-  description = "Brief description to identify the role. It will be appended as suffix to the role name. Example value: 'Default Config'"
+variable "role_name" {
+  description = "The name of the role. It will forces new resource on change."
   type        = "string"
+}
+
+variable "role_path" {
+  description = "The path to the role. See https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html for more information."
+  type        = "string"
+  default     = "/"
 }
 
 variable "role_description" {
@@ -13,9 +19,9 @@ variable "role_force_detach_policies" {
   default     = false
 }
 
-variable "aws_service" {
-  description = "AWS service that are allowed to perform actions granted on your behalf. Example value: 'config.amazonaws.com'"
-  type        = "string"
+variable "trusted_accounts" {
+  description = "List of ARNs of accounts that are granted to assume the role."
+  type        = "list"
 }
 
 variable "role_max_session_duration" {
@@ -26,6 +32,11 @@ variable "role_max_session_duration" {
 variable "product_domain" {
   description = "Abbreviation of the product domain the created resources belong to"
   type        = "string"
+}
+
+variable "service_name" {
+  type        = "string"
+  description = "The service name that will be used in tags and resources default name"
 }
 
 variable "environment" {

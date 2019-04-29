@@ -1,6 +1,6 @@
 # Added provider AWS version constraint. `max_session_duration` is supported on 1.14.0
 provider "aws" {
-  version = "~> 1.14"
+  version = ">= 1.4, <= 2.3"
 
   # region is added to prevent consumers getting region prompts (one prompt for each usage)
   region = "${var.region}"
@@ -18,4 +18,12 @@ resource "aws_iam_role" "this" {
   assume_role_policy    = "${var.role_assume_policy}"
   force_detach_policies = "${var.role_force_detach_policies}"
   max_session_duration  = "${var.role_max_session_duration}"
+
+  tags = "${merge(map(
+    "Name", var.role_name,
+    "Environment", var.environment,
+    "ProductDomain", var.product_domain,
+    "Description", var.role_description,
+    "ManagedBy", "terraform",
+     ), var.role_tags)}"
 }
