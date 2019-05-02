@@ -1,24 +1,12 @@
-# Trust relationship policy document for user that requires MFA to be enabled.
 data "aws_iam_policy_document" "doc" {
   statement = {
     actions = ["sts:AssumeRole"]
 
     principals = {
       type        = "AWS"
-      identifiers = "${var.trusted_accounts}"
+      identifiers = "${var.trusted_role_arns}"
     }
   }
-}
-
-provider "null" {
-  version = "1.0.0"
-}
-
-# Work around to throws an exception. 
-# It throws exception when the provided path does not begin and end with a forward slash.
-resource "null_resource" "is_path_valid" {
-  count                                        = "${substr(var.role_path, 0, 14) != "/crossaccount/" ? 1 : 0}"
-  "Path names must begin with '/crossacount/'" = "true"
 }
 
 module "aws-resource-naming_iam_role" {
@@ -28,16 +16,16 @@ module "aws-resource-naming_iam_role" {
 }
 
 # Module, the parent module.
-module "this" {
+module "crossacount" {
   source = "../../"
 
   role_name        = "${module.aws-resource-naming_iam_role.name}"
-  role_path        = "${var.role_path}"
+  role_path        = "/crossaccount/${var.role_path}"
   role_description = "${var.role_description}"
 
-  role_tags = "${merge(map(
+  role_tags = "${merge(var.role_tags, map(
     "Service", "${var.service_name}"
-    ),var.role_tags)}"
+    ))}"
 
   role_assume_policy         = "${data.aws_iam_policy_document.doc.json}"
   role_force_detach_policies = "${var.role_force_detach_policies}"

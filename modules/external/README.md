@@ -1,6 +1,6 @@
 terraform-aws-iam-role/external
 ===============================
-This module is meant to create IAM Role for 3rd party AWS Account. To create cross account IAM role between products in Traveloka organization, use [crossaccount submodule](https://github.com/traveloka/terraform-aws-iam-role/tree/master/modules/external)
+This module is meant to create IAM Role for 3rd party AWS Account. To create cross account IAM role between products in Traveloka organization, use [crossaccount submodule](https://github.com/traveloka/terraform-aws-iam-role/tree/master/modules/crossaccount)
 
 
 Usage

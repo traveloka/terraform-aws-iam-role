@@ -8,15 +8,14 @@ module "this" {
   source = "../../modules/crossaccount"
 
   role_name                  = "SqsSendMessageToNvmawsmService"
-  role_path                  = "/crossaccount/"
+  role_path                  = "something/"
   role_description           = "Role for sending message to nvm-you-are-awesome SQS"
   role_force_detach_policies = true
   role_max_session_duration  = 3600
 
-  trusted_accounts = [
+  trusted_role_arns = [
     # In actual use case, you have to replace this line(s) below with correct ARN.
-    # "123456789013", # You could add more trusted account.
-    "123456789012",
+    "arn:aws:iam::123456789012:role/instance-role/InstanceRole_tsttest-app-a5a88dc27381fa3a",
   ]
 
   product_domain = "nvm"
@@ -26,4 +25,3 @@ module "this" {
 
 # You can output the IAM role name/arn and use it on SQS resource policy.
 # See outputs.tf 
-

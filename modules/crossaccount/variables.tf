@@ -4,9 +4,9 @@ variable "role_name" {
 }
 
 variable "role_path" {
-  description = "The path to the role. See https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html for more information."
+  description = "Additional path to the role. `/crossaccount/` will be forced as prefix of the patch. See https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html for more information."
   type        = "string"
-  default     = "/"
+  default     = ""
 }
 
 variable "role_description" {
@@ -19,8 +19,8 @@ variable "role_force_detach_policies" {
   default     = false
 }
 
-variable "trusted_accounts" {
-  description = "List of ARNs of accounts that are granted to assume the role."
+variable "trusted_role_arns" {
+  description = "List of ARNs of IAM role that are granted to assume the role."
   type        = "list"
 }
 

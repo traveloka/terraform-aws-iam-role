@@ -44,9 +44,9 @@ module "this" {
   role_path        = "/lambda-role/"
   role_description = "Lambda Role for ${local.role_identifier}"
 
-  role_tags = "${merge(map(
+  role_tags = "${merge(var.role_tags, map(
     "Service", "${var.service_name}"
-    ),var.role_tags)}"
+    ))}"
 
   role_assume_policy         = "${var.lambda_type != true ? data.aws_iam_policy_document.edge.json : data.aws_iam_policy_document.this.json}"
   role_force_detach_policies = "${var.role_force_detach_policies}"
