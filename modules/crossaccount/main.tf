@@ -15,12 +15,16 @@ module "aws-resource-naming_iam_role" {
   resource_type = "iam_role"
 }
 
+locals {
+  additional_role_path = "${substr(var.role_path, 0, 1) == "/" ? substr(var.role_path, 1, length(var.role_path)-1) : var.role_path}"
+}
+
 # Module, the parent module.
 module "crossacount" {
   source = "../../"
 
   role_name        = "${module.aws-resource-naming_iam_role.name}"
-  role_path        = "/crossaccount/${var.role_path}"
+  role_path        = "/crossaccount/${local.additional_role_path}"
   role_description = "${var.role_description}"
 
   role_tags = "${merge(var.role_tags, map(
