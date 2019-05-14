@@ -5,7 +5,7 @@ This module allows you to create an IAM Role for User.
 
 Usage
 -----
-You can open this example: [IAM Role for User](https://github.com/traveloka/terraform-aws-iam-role/tree/master/examples/user_iam)
+You can open this example: [IAM Role for User](https://github.com/traveloka/terraform-aws-iam-role/tree/master/examples/user-iam)
 
 
 Important Notes

@@ -17,7 +17,9 @@ module "this" {
     "arn:aws:iam::123456789012:user/rafi.putra", # In actual use case, you have to replace this line with correct IAM User ARN.
   ]
 
-  mfa_required = true # Set this value to false only when needed
+  mfa_required   = true        # Set this value to false only when needed
+  product_domain = "txt"
+  environment    = "prodution"
 }
 
 resource "aws_iam_role_policy_attachment" "this" {

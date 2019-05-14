@@ -33,3 +33,19 @@ variable "role_max_session_duration" {
   description = "The maximum session duration (in seconds) that you want to set for the specified role. If you do not specify a value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to 12 hours."
   default     = "3600"
 }
+
+variable "product_domain" {
+  description = "Abbreviation of the product domain the created resources belong to"
+  type        = "string"
+}
+
+variable "environment" {
+  type        = "string"
+  description = "Will be used in Environment tag"
+}
+
+variable "role_tags" {
+  description = "Additional tags to be put on iam role"
+  type        = "map"
+  default     = {}
+}

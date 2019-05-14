@@ -42,9 +42,16 @@ module "this" {
   role_path        = "/instance-role/"
   role_description = "Instance Role for ${lower(var.service_name)}-${lower(var.cluster_role)}"
 
+  role_tags = "${merge(var.role_tags, map(
+    "Service", "${var.service_name}"
+    ))}"
+
   role_assume_policy         = "${data.aws_iam_policy_document.this.json}"
   role_force_detach_policies = "${var.role_force_detach_policies}"
   role_max_session_duration  = "${var.role_max_session_duration}"
+
+  product_domain = "${var.product_domain}"
+  environment    = "${var.environment}"
 }
 
 # Provides an IAM instance profile.

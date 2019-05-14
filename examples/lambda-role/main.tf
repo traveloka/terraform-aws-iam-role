@@ -10,4 +10,5 @@ module "this" {
   product_domain   = "txt"
   service_name     = "txtjobs"
   descriptive_name = "Periodic Scheduler"
+  environment      = "production"
 }

@@ -1,5 +1,5 @@
 variable "product_domain" {
-  description = "Product domain these resources belong to."
+  description = "Abbreviation of product domain these resources belong to."
   type        = "string"
 }
 
@@ -27,4 +27,15 @@ variable "role_max_session_duration" {
 variable "lambda_type" {
   description = "type of lambda , if lambda edge this variable should be true"
   default     = false
+}
+
+variable "environment" {
+  type        = "string"
+  description = "Will be used in Environment tag"
+}
+
+variable "role_tags" {
+  description = "Additional tags to be put on iam role"
+  type        = "map"
+  default     = {}
 }
