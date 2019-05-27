@@ -1,5 +1,5 @@
 provider "random" {
-  version = ">= 1.2.0"
+  version = "~> 1.2.0"
 }
 
 # Contains local values that are used to increase DRYness of the code.
