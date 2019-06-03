@@ -11,9 +11,8 @@ module "this" {
   cluster_role   = "app"
   product_domain = "txt"
   environment    = "production"
-}
 
-resource "aws_iam_role_policy_attachment" "this" {
-  role       = "${module.this.role_name}"
-  policy_arn = "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
+  role_policy_attachments = [
+    "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess",
+  ]
 }

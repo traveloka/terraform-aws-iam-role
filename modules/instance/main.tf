@@ -54,6 +54,14 @@ module "this" {
   environment    = "${var.environment}"
 }
 
+# Attaches policies
+resource "aws_iam_role_policy_attachment" "this" {
+  count = "${length(var.role_policy_attachments)}"
+
+  role       = "${module.this.role_name}"
+  policy_arn = "${element(var.role_policy_attachments, count.index)}"
+}
+
 # Provides an IAM instance profile.
 resource "aws_iam_instance_profile" "this" {
   name = "${replace(random_id.role_name.hex, "Role", "Profile")}"

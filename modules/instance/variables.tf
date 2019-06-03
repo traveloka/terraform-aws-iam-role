@@ -33,3 +33,9 @@ variable "role_tags" {
   type        = "map"
   default     = {}
 }
+
+variable "role_policy_attachments" {
+  description = "Policies to attach to the role"
+  type = "list"
+  default = []
+}
