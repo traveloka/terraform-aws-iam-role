@@ -9,8 +9,8 @@ module "this" {
 
   role_identifier            = "Default Config"
   role_description           = "Service Role for Default AWS Config"
-  role_force_detach_policies = false
-  role_max_session_duration  = 43200
+  role_force_detach_policies = "false"
+  role_max_session_duration  = "43200"
 
   aws_service = "config.amazonaws.com"
 

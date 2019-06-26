@@ -10,7 +10,7 @@ variable "role_description" {
 
 variable "role_force_detach_policies" {
   description = "Specifies to force detaching any policies the role has before destroying it."
-  default     = false
+  default     = "false"
 }
 
 variable "aws_service" {
@@ -20,7 +20,7 @@ variable "aws_service" {
 
 variable "role_max_session_duration" {
   description = "The maximum session duration (in seconds) that you want to set for the specified role. If you do not specify a value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to 12 hours."
-  default     = 3600
+  default     = "3600"
 }
 
 variable "product_domain" {

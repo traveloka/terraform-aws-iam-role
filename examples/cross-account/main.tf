@@ -10,8 +10,8 @@ module "this" {
   role_name                  = "SqsSendMessageToNvmawsmService"
   role_path                  = "something/"
   role_description           = "Role for sending message to nvm-you-are-awesome SQS"
-  role_force_detach_policies = true
-  role_max_session_duration  = 3600
+  role_force_detach_policies = "true"
+  role_max_session_duration  = "3600"
 
   trusted_role_arns = [
     # In actual use case, you have to replace this line(s) below with correct ARN.
@@ -25,3 +25,4 @@ module "this" {
 
 # You can output the IAM role name/arn and use it on SQS resource policy.
 # See outputs.tf 
+

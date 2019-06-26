@@ -1,14 +1,3 @@
-provider "null" {
-  version = ">= 1.0.0, < 3.0.0"
-}
-
-# Work around to throws an exception. 
-# It throws exception when the provided path does not begin and end with a forward slash.
-resource "null_resource" "is_path_valid" {
-  count                                     = "${substr(var.role_path, 0, 10) != "/external/" ? 1 : 0}"
-  "Path names must begin with '/external/'" = "true"
-}
-
 # Trust relationships policy document
 data "aws_iam_policy_document" "doc" {
   statement = {

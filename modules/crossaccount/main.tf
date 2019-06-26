@@ -16,7 +16,7 @@ module "aws-resource-naming_iam_role" {
 }
 
 locals {
-  additional_role_path = "${substr(var.role_path, 0, 1) == "/" ? substr(var.role_path, 1, length(var.role_path)-1) : var.role_path}"
+  additional_role_path = "${substr(var.role_path, "0", "1") == "/" ? substr(var.role_path, "1", length(var.role_path)-1) : var.role_path}"
 }
 
 # Module, the parent module.
