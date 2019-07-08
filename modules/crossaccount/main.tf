@@ -4,7 +4,7 @@ data "aws_iam_policy_document" "doc" {
 
     principals = {
       type        = "AWS"
-      identifiers = "${var.trusted_role_arns}"
+      identifiers = ["${var.trusted_role_arns}"]
     }
   }
 }

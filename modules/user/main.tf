@@ -5,7 +5,7 @@ data "aws_iam_policy_document" "with_mfa" {
 
     principals = {
       type        = "AWS"
-      identifiers = "${var.trusted_users}"
+      identifiers = ["${var.trusted_users}"]
     }
 
     condition = [
@@ -25,7 +25,7 @@ data "aws_iam_policy_document" "without_mfa" {
 
     principals = {
       type        = "AWS"
-      identifiers = "${var.trusted_users}"
+      identifiers = ["${var.trusted_users}"]
     }
   }
 }
