@@ -42,7 +42,6 @@ To create the issue ticket you can use **Feature Request** template. By using th
 
 Before start contributing, it is required for you to:
 - Ensure an issue related to the changes you want to submit is exists. If not, create an issue and start discussion there prior working on contribution. This will reduce chance of unncecessary double efforts.
-- Always sign your commits. To learn how to do so, please follow https://help.github.com/en/articles/signing-commits. If any of you commits is not signed then your PR will not be able to be merged.
 - Use Terraform and AWS provider which versions are the one listed on [README.md](README.md)
 - Execute `terraform fmt` to rewrite Terraform configuration files to a canonical format and style.
 
