@@ -5,7 +5,7 @@ This module is meant to create IAM Role for 3rd party AWS Account. To create cro
 
 Usage
 -----
-You can open this example: [IAM Role for 3rd Party AWS Account](https://github.com/traveloka/terraform-aws-iam-role/tree/master/examples/external_account)
+You can open this example: [IAM Role for 3rd Party AWS Account](https://github.com/traveloka/terraform-aws-iam-role/tree/master/examples/external-account)
 
 
 Important Notes
