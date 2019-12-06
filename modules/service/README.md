@@ -5,7 +5,7 @@ This module allows you to create an IAM Role for AWS service to perform actions 
 
 Usage
 -----
-You can open this example: [Service Role for Config](https://github.com/traveloka/terraform-aws-iam-role/tree/master/examples/aws_service_config)
+You can open this example: [Service Role for Config](https://github.com/traveloka/terraform-aws-iam-role/tree/master/examples/aws-service-config)
 
 
 Important Notes
