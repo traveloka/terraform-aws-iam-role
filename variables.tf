@@ -1,9 +1,3 @@
-variable "region" {
-  description = "The region from which this module will be executed"
-  type        = "string"
-  default     = "ap-southeast-1"
-}
-
 variable "role_name" {
   description = "The name of the role. It will forces new resource on change."
   type        = "string"
