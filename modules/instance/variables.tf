@@ -18,6 +18,12 @@ variable "role_max_session_duration" {
   default     = 3600
 }
 
+variable "role_permission_boundary" {
+  description = "IAM policy ARN limiting the maximum access this role can have"
+  type        = "string"
+  default     = ""
+}
+
 variable "product_domain" {
   description = "Abbreviation of the product domain the created resources belong to"
   type        = "string"

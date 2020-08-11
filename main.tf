@@ -8,6 +8,7 @@ resource "aws_iam_role" "this" {
   description = "${var.role_description}"
 
   assume_role_policy    = "${var.role_assume_policy}"
+  permissions_boundary  = "${var.role_permission_boundary}"
   force_detach_policies = "${var.role_force_detach_policies}"
   max_session_duration  = "${var.role_max_session_duration}"
 

@@ -49,6 +49,7 @@ module "this" {
     ))}"
 
   role_assume_policy         = "${var.lambda_type == true ? data.aws_iam_policy_document.edge.json : data.aws_iam_policy_document.this.json}"
+  role_permission_boundary   = "${var.role_permission_boundary}"
   role_force_detach_policies = "${var.role_force_detach_policies}"
   role_max_session_duration  = "${var.role_max_session_duration}"
 

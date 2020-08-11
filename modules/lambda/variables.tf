@@ -24,6 +24,12 @@ variable "role_max_session_duration" {
   default     = 3600
 }
 
+variable "role_permission_boundary" {
+  description = "IAM policy ARN limiting the maximum access this role can have"
+  type        = "string"
+  default     = ""
+}
+
 variable "lambda_type" {
   description = "type of lambda , if lambda edge this variable should be true"
   default     = false
