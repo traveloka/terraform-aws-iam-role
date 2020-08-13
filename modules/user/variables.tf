@@ -19,6 +19,12 @@ variable "role_force_detach_policies" {
   default     = false
 }
 
+variable "role_permission_boundary" {
+  description = "IAM policy ARN limiting the maximum access this role can have"
+  type        = "string"
+  default     = ""
+}
+
 variable "trusted_users" {
   description = "List of ARNs of users that are granted to assume the role."
   type        = "list"
