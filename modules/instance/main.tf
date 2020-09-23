@@ -15,7 +15,7 @@ locals {
     lower(var.service_name),
     lower(var.cluster_role),
   )
-  role_name_max_byte_length = local.role_name_max_length - length(local.role_name_prefix) / 2
+  role_name_max_byte_length = (local.role_name_max_length - length(local.role_name_prefix)) / 2
   role_name_byte_length     = min(local.max_byte_length, local.role_name_max_byte_length)
 }
 
