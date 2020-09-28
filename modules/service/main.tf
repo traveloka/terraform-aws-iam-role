@@ -15,7 +15,7 @@ locals {
     title(element(split(".", var.aws_service), 0)),
     join("-", split(" ", lower(var.role_identifier))),
   )
-  role_name_max_byte_length = (local.role_name_max_length - length(local.role_name_prefix)) / 2
+  role_name_max_byte_length = floor((local.role_name_max_length - length(local.role_name_prefix)) / 2)
   role_name_byte_length     = min(local.max_byte_length, local.role_name_max_byte_length)
 }
 
