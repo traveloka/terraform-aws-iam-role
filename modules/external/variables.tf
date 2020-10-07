@@ -1,17 +1,17 @@
 variable "role_name" {
   description = "The name of the role. It will forces new resource on change."
-  type        = "string"
+  type        = string
 }
 
 variable "role_path" {
   description = "The path to the role. See https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html for more information."
-  type        = "string"
+  type        = string
   default     = "/external/"
 }
 
 variable "role_description" {
   description = "The description of the role."
-  type        = "string"
+  type        = string
 }
 
 variable "role_force_detach_policies" {
@@ -21,12 +21,12 @@ variable "role_force_detach_policies" {
 
 variable "account_id" {
   description = "AWS Account ID that is allowed to assume this role."
-  type        = "string"
+  type        = string
 }
 
 variable "external_id" {
   description = "External ID provided by third party."
-  type        = "string"
+  type        = string
 }
 
 variable "role_max_session_duration" {
@@ -34,18 +34,25 @@ variable "role_max_session_duration" {
   default     = "3600"
 }
 
+variable "role_permission_boundary" {
+  description = "IAM policy ARN limiting the maximum access this role can have"
+  type        = string
+  default     = ""
+}
+
 variable "product_domain" {
   description = "Abbreviation of the product domain the created resources belong to"
-  type        = "string"
+  type        = string
 }
 
 variable "environment" {
-  type        = "string"
+  type        = string
   description = "Will be used in Environment tag"
 }
 
 variable "role_tags" {
   description = "Additional tags to be put on iam role"
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
+

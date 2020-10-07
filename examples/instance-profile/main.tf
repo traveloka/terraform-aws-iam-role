@@ -14,6 +14,7 @@ module "this" {
 }
 
 resource "aws_iam_role_policy_attachment" "this" {
-  role       = "${module.this.role_name}"
+  role       = module.this.role_name
   policy_arn = "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
 }
+

@@ -7,7 +7,7 @@ module "this" {
   # source = "github.com/traveloka/terraform-aws-iam-role.git//modules/external?ref=v0.6.0"
   source = "../../modules/external"
 
-  role_name                  = "ThirdPartyName"      # Replace this value with the name given by 3rd party, or define it by yourself with clear and describing name
+  role_name                  = "ThirdPartyName" # Replace this value with the name given by 3rd party, or define it by yourself with clear and describing name
   role_path                  = "/external/security/"
   role_description           = "Role for ThirdParty"
   role_force_detach_policies = "true"
@@ -21,6 +21,7 @@ module "this" {
 }
 
 resource "aws_iam_role_policy_attachment" "this" {
-  role       = "${module.this.role_name}"
+  role       = module.this.role_name
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess"
 }
+

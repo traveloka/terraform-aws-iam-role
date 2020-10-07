@@ -1,17 +1,17 @@
 variable "product_domain" {
   description = "Abbreviation of product domain these resources belong to."
-  type        = "string"
+  type        = string
 }
 
 variable "service_name" {
   description = "The name of the service that going to assume this role."
-  type        = "string"
+  type        = string
   default     = ""
 }
 
 variable "descriptive_name" {
   description = "Brief description of Lambda Function. It will be added to the role name. Example value: 'Periodic Scheduler'"
-  type        = "string"
+  type        = string
 }
 
 variable "role_force_detach_policies" {
@@ -24,18 +24,25 @@ variable "role_max_session_duration" {
   default     = 3600
 }
 
+variable "role_permission_boundary" {
+  description = "IAM policy ARN limiting the maximum access this role can have"
+  type        = string
+  default     = ""
+}
+
 variable "lambda_type" {
   description = "type of lambda , if lambda edge this variable should be true"
   default     = false
 }
 
 variable "environment" {
-  type        = "string"
+  type        = string
   description = "Will be used in Environment tag"
 }
 
 variable "role_tags" {
   description = "Additional tags to be put on iam role"
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
+
