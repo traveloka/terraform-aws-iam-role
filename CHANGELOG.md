@@ -1,3 +1,9 @@
+## v1.0.3 (Aug 6, 2020)
+
+ENHANCEMENTS:
+
+* Remove unused "region" variable
+
 ## v1.0.2 (Aug 6, 2019)
 
 BUG FIXES:
